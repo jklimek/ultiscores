@@ -1,0 +1,127 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env*.example
+
+# Python Virtual Environment
+venv/
+env/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Node.js / npm
+node_modules/
+npm-debug.log
+npm-error.log
+yarn-error.log
+.npm/
+.eslintcache
+.node_modules.tar.gz
+
+# Next.js Build Output
+.next/
+out/
+dist/
+build/
+.turbo/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.vim/
+
+# OS Files
+.DS_Store
+Thumbs.db
+.gitkeep
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+scores.db
+test.db
+
+# Logs
+logs/
+*.log
+*.log.*
+.pytest_cache/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Temporary Files
+*.tmp
+*.bak
+*.backup
+.temp/
+temp/
+tmp/
+
+# OS-specific
+.AppleDouble
+.LSOverride
+*.DS_Store
+desktop.ini
+
+# Package managers lock files (optional - uncomment if you want to track these)
+# package-lock.json
+# yarn.lock
+
+# Alembic
+alembic/versions/*.py
+
+# FastAPI / Uvicorn
+*.sock
+
+# Streamlit
+.streamlit/
+
+# Python type checking
+.pytype/
+
+# IDE specific
+.vscode/settings.json
+.vscode/extensions.json
+
+# Testing
+.coverage.*
+.pytest/
+
+# Build artifacts
+*.o
+*.a
+*.so
+
+# Development
+.dev/
+dev-config.json
+
+# Misc
+.cache/
+.eslintignore
+.prettierignore
+
