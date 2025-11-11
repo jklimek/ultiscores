@@ -3,7 +3,7 @@
 ## 🚀 First Time Setup (Run Once)
 
 ```bash
-cd /home/kuba/dev/new-scores
+cd /home/kuba/dev/ultiscores
 ./setup.sh
 ```
 

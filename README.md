@@ -97,7 +97,7 @@ streamlit run admin_app.py
 ## 📁 Project Structure
 
 ```
-new-scores/
+ultiscores/
 ├── scores-web/              # Next.js frontend
 │   ├── src/
 │   │   ├── app/            # Next.js App Router pages

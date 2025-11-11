@@ -9,7 +9,7 @@ Successfully consolidated `scores-web` and `scores-server` into a unified monore
 ## All Issues Fixed ✅
 
 ### 1. ✅ Workspace Consolidation
-- Unified structure at `/home/kuba/dev/new-scores/`
+- Unified structure at `/home/kuba/dev/ultiscores/`
 - Consolidated documentation in `/docs`
 - Created startup scripts (`setup.sh`, `start-all-simple.sh`, `stop-all.sh`)
 
@@ -189,7 +189,7 @@ Backend auto-reloads via `uvicorn --reload` - changes should be live immediately
 
 ### 2. Run Verification Script
 ```bash
-cd /home/kuba/dev/new-scores
+cd /home/kuba/dev/ultiscores
 ./verify-schemas.sh
 ```
 
@@ -326,7 +326,7 @@ tail -20 logs/frontend.log | grep -i error
 
 ### If Services Need Restart
 ```bash
-cd /home/kuba/dev/new-scores
+cd /home/kuba/dev/ultiscores
 ./stop-all.sh
 ./start-all-simple.sh
 

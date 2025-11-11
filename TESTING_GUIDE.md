@@ -6,7 +6,7 @@
 ```bash
 # Backend should auto-reload when files change
 # Check the logs:
-tail -f /home/kuba/dev/new-scores/logs/backend.log
+tail -f /home/kuba/dev/ultiscores/logs/backend.log
 
 # Look for:
 # - "Application startup complete"
@@ -47,7 +47,7 @@ curl -s http://localhost:8000/v1/teams/sky-this | python3 -m json.tool
 ### 5. Check Frontend
 ```bash
 # Watch frontend logs for parsing errors
-tail -f /home/kuba/dev/new-scores/logs/frontend.log | grep -i "failed\|error"
+tail -f /home/kuba/dev/ultiscores/logs/frontend.log | grep -i "failed\|error"
 
 # Should NOT see:
 # - "Failed to parse API response"
@@ -165,7 +165,7 @@ echo "Visit: http://localhost:3000/tournaments"
 ### Backend Not Reloading
 ```bash
 # Manually restart
-cd /home/kuba/dev/new-scores
+cd /home/kuba/dev/ultiscores
 ./stop-all.sh
 ./start-all-simple.sh
 ```
@@ -173,7 +173,7 @@ cd /home/kuba/dev/new-scores
 ### Still Getting Parse Errors
 ```bash
 # Check which field is failing
-tail -100 /home/kuba/dev/new-scores/logs/frontend.log | grep -B 5 "Failed to parse"
+tail -100 /home/kuba/dev/ultiscores/logs/frontend.log | grep -B 5 "Failed to parse"
 
 # The error will show which Zod validation failed
 ```
@@ -181,7 +181,7 @@ tail -100 /home/kuba/dev/new-scores/logs/frontend.log | grep -B 5 "Failed to par
 ### Empty Arrays Still Showing
 ```bash
 # Check if tournament_rosters table has data
-cd /home/kuba/dev/new-scores/scores-server
+cd /home/kuba/dev/ultiscores/scores-server
 sqlite3 scores.db "SELECT COUNT(*) FROM tournament_rosters;"
 
 # Should return > 0
@@ -193,7 +193,7 @@ python3 -m src.scripts.seed_data
 ### Server Errors (500)
 ```bash
 # Check detailed backend logs
-tail -100 /home/kuba/dev/new-scores/logs/backend.log
+tail -100 /home/kuba/dev/ultiscores/logs/backend.log
 
 # Look for Python tracebacks and exceptions
 ```
@@ -233,7 +233,7 @@ echo "$TEAM_DATA" | python3 -c "import sys, json; d=json.load(sys.stdin); print(
 echo "$TEAM_DATA" | python3 -c "import sys, json; d=json.load(sys.stdin); print('✓ Has roster' if d and len(d[0].get('roster', [])) > 0 else '✗ Empty roster')"
 
 echo -e "\n=== Frontend Errors Check ==="
-grep -c "Failed to parse" /home/kuba/dev/new-scores/logs/frontend.log | python3 -c "import sys; c=int(sys.stdin.read()); print('✗ Parse errors found:', c) if c > 0 else print('✓ No parse errors')"
+grep -c "Failed to parse" /home/kuba/dev/ultiscores/logs/frontend.log | python3 -c "import sys; c=int(sys.stdin.read()); print('✗ Parse errors found:', c) if c > 0 else print('✓ No parse errors')"
 ```
 
 Save as `test-health.sh`, make executable, and run:
